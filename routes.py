@@ -1,7 +1,8 @@
 from flask import render_template, request
+from datetime import datetime
 
 def home_route():
-    return render_template("home.html", message="Привет!")  # Приветственное сообщение
+    return render_template("home.html", message="Привет!", current_year=datetime.now().year)  # Передаем текущий год сюда
 
 def register_route():
     return render_template("register.html")
