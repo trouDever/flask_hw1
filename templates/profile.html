@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль</title>
+</head>
+<body>
+    <h1>Профиль пользователя</h1>
+
+    {% if photo %}
+        <img src="{{ url_for('upload', filename=photo) }}" alt="Фото" width="100">
+
+    {% endif %}
+
+    <p><strong>Имя:</strong> {{ name }}</p>
+    <p><strong>Фамилия:</strong> {{ surname }}</p>
+    <p><strong>Дата рождения:</strong> {{ birthdate }}</p>
+    <p><strong>Увлечения:</strong> {{ hobbies }}</p>
+</body>
+</html>

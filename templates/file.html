@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Загрузить файл</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="file">Загрузить</label>
+        <input type="file" name="file" id="file">
+        <button type="submit">Загрузить</button>
+    </form>
+{% endblock %}

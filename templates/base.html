@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Мой сайт{% endblock %}</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ff91c1;
+            padding: 15px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .button-container button {
+            background-color: #ff91c1;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button-container button:hover {
+            background-color: white;
+            color: #ff91c1;
+        }
+
+        footer {
+            background-color: #ff91c1;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="button-container">
+            <button onclick="window.location.href='{{ url_for('home') }}'">Главная</button>
+            <button onclick="window.location.href='{{ url_for('easter_egg') }}'">Пасхалка</button>
+        </div>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <p>Текущий год: {{ current_year }}</p>
+    </footer>
+
+</body>
+</html>

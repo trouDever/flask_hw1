@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Ваш аккаунт</h2>
+    <p>Имя: {{ name }}</p>
+    <p>Фамилия: {{ surname }}</p>
+    <p>Дата рождения: {{ birthdate.strftime('%d-%m-%Y') }}</p>
+    <p>Увлечения: {{ hobbies }}</p>
+    <img src="{{ url_for('upload_file', filename=photo) }}" alt="Аватарка" width="100">
+{% endblock %}
